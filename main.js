@@ -24,6 +24,7 @@ const whatsappBtn = document.getElementById("whatsappBtn");
 const currentYear = document.getElementById("currentYear");
 const menuToggle = document.getElementById("menuToggle");
 const mainNav = document.getElementById("mainNav");
+const floatingWhatsappBtn = document.getElementById("floatingWhatsappBtn");
 const sizeGuideBtn = document.getElementById("sizeGuideBtn");
 const sizeGuideModal = document.getElementById("sizeGuideModal");
 const sizeGuideClose = document.getElementById("sizeGuideClose");
@@ -689,6 +690,10 @@ if (currentYear) {
   currentYear.textContent = new Date().getFullYear();
 }
 
+if (floatingWhatsappBtn) {
+  const mensajeWhatsappGeneral = "Hola, quiero recibir información sobre Amelí.";
+  floatingWhatsappBtn.href = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(mensajeWhatsappGeneral);
+}
 /* =============================
    INICIAR
    ============================= */
