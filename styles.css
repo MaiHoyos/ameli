@@ -339,6 +339,9 @@ main {
   color: var(--gold-deep);
 }
 
+.hero-mobile-collage {
+  display: none;
+}
 /* Imagen hero con marco fino */
 /* Imagen hero fundida hacia el texto (sin marco) */
 .hero-image-card {
@@ -1092,6 +1095,43 @@ main {
     right: 14px;
     z-index: 200;
   }
+
+     .hero-launch-image {
+    display: none;
+  }
+
+  .hero-image-card {
+    aspect-ratio: auto;
+    max-height: none;
+    width: 100%;
+  }
+
+  .hero-mobile-collage {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 88px;
+    gap: 7px;
+    width: min(100%, 320px);
+    margin: 24px auto 0;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .hero-collage-item {
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    background: var(--linen);
+  }
+
+  .hero-collage-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+    pointer-events: none;
+    user-select: none;
+  }
 }
 
 @media (max-width: 520px) {
@@ -1130,7 +1170,12 @@ main {
   .modal-info-panel h2 {
     font-size: 34px;
   }
-
+  .hero-mobile-collage {
+    width: min(100%, 280px);
+    grid-auto-rows: 76px;
+    gap: 6px;
+    margin-top: 22px;
+  }
    
    
 }
