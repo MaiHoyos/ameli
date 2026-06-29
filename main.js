@@ -106,15 +106,44 @@ function rutasUnicas(rutas) {
   return [...new Set(rutas.filter(Boolean))];
 }
 
-function crearRutasImagenPrincipal(nombreProducto) {
+function crearRutasImagenColor(nombreProducto, color) {
   const base = slugProducto(nombreProducto);
   const original = String(nombreProducto || "").trim();
+  const originalSinAcentos = String(nombreProducto || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim();
+
+  const colorSlug = slugColor(color);
+  const colorOriginal = String(color || "").trim();
+  const colorTitulo = slugProducto(colorOriginal);
 
   return rutasUnicas([
-    imageFolder + base + ".png",
-    imageFolder + original + ".png",
-    imageFolder + base + ".jpg",
-    imageFolder + original + ".jpg"
+    // Formato recomendado: Maria-Jose-miel.png
+    imageFolder + base + "-" + colorSlug + ".png",
+    imageFolder + base + "-" + colorTitulo + ".png",
+    imageFolder + base + "-" + colorOriginal + ".png",
+
+    // Con nombre original del Excel: María José-miel.png
+    imageFolder + original + "-" + colorSlug + ".png",
+    imageFolder + original + "-" + colorOriginal + ".png",
+    imageFolder + original + "-" + colorTitulo + ".png",
+
+    // Con nombre sin acentos pero con espacios: Maria Jose-miel.png
+    imageFolder + originalSinAcentos + "-" + colorSlug + ".png",
+    imageFolder + originalSinAcentos + "-" + colorOriginal + ".png",
+    imageFolder + originalSinAcentos + "-" + colorTitulo + ".png",
+
+    // Variantes JPG
+    imageFolder + base + "-" + colorSlug + ".jpg",
+    imageFolder + base + "-" + colorTitulo + ".jpg",
+    imageFolder + base + "-" + colorOriginal + ".jpg",
+    imageFolder + original + "-" + colorSlug + ".jpg",
+    imageFolder + original + "-" + colorOriginal + ".jpg",
+    imageFolder + original + "-" + colorTitulo + ".jpg",
+    imageFolder + originalSinAcentos + "-" + colorSlug + ".jpg",
+    imageFolder + originalSinAcentos + "-" + colorOriginal + ".jpg",
+    imageFolder + originalSinAcentos + "-" + colorTitulo + ".jpg"
   ]);
 }
 
