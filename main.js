@@ -106,63 +106,92 @@ function rutasUnicas(rutas) {
   return [...new Set(rutas.filter(Boolean))];
 }
 
-function crearRutasImagenColor(nombreProducto, color) {
-  const base = slugProducto(nombreProducto);
+function variantesNombreArchivo(nombreProducto) {
   const original = String(nombreProducto || "").trim();
-  const originalSinAcentos = String(nombreProducto || "")
+
+  const sinAcentos = original
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .trim();
 
-  const colorSlug = slugColor(color);
-  const colorOriginal = String(color || "").trim();
-  const colorTitulo = slugProducto(colorOriginal);
+  const slug = slugProducto(original);
+
+  const originalConGuiones = original.replace(/\s+/g, "-");
+  const sinAcentosConGuiones = sinAcentos.replace(/\s+/g, "-");
+
+  const originalSinEspacios = original.replace(/\s+/g, "");
+  const sinAcentosSinEspacios = sinAcentos.replace(/\s+/g, "");
+
+  // Caso especial útil para María José / Maria José / Maria-José / MariaJose
+  const mariaEspecial = original.replace(/^María\b/i, "Maria");
+  const mariaEspecialGuiones = mariaEspecial.replace(/\s+/g, "-");
+  const mariaEspecialSinEspacios = mariaEspecial.replace(/\s+/g, "");
 
   return rutasUnicas([
-    // Formato recomendado: Maria-Jose-miel.png
-    imageFolder + base + "-" + colorSlug + ".png",
-    imageFolder + base + "-" + colorTitulo + ".png",
-    imageFolder + base + "-" + colorOriginal + ".png",
-
-    // Con nombre original del Excel: María José-miel.png
-    imageFolder + original + "-" + colorSlug + ".png",
-    imageFolder + original + "-" + colorOriginal + ".png",
-    imageFolder + original + "-" + colorTitulo + ".png",
-
-    // Con nombre sin acentos pero con espacios: Maria Jose-miel.png
-    imageFolder + originalSinAcentos + "-" + colorSlug + ".png",
-    imageFolder + originalSinAcentos + "-" + colorOriginal + ".png",
-    imageFolder + originalSinAcentos + "-" + colorTitulo + ".png",
-
-    // Variantes JPG
-    imageFolder + base + "-" + colorSlug + ".jpg",
-    imageFolder + base + "-" + colorTitulo + ".jpg",
-    imageFolder + base + "-" + colorOriginal + ".jpg",
-    imageFolder + original + "-" + colorSlug + ".jpg",
-    imageFolder + original + "-" + colorOriginal + ".jpg",
-    imageFolder + original + "-" + colorTitulo + ".jpg",
-    imageFolder + originalSinAcentos + "-" + colorSlug + ".jpg",
-    imageFolder + originalSinAcentos + "-" + colorOriginal + ".jpg",
-    imageFolder + originalSinAcentos + "-" + colorTitulo + ".jpg"
+    original,
+    sinAcentos,
+    slug,
+    originalConGuiones,
+    sinAcentosConGuiones,
+    originalSinEspacios,
+    sinAcentosSinEspacios,
+    mariaEspecial,
+    mariaEspecialGuiones,
+    mariaEspecialSinEspacios
   ]);
+}
+
+function variantesColorArchivo(color) {
+  const original = String(color || "").trim();
+
+  const sinAcentos = original
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim();
+
+  const slug = slugColor(original);
+  const titulo = slugProducto(original);
+
+  return rutasUnicas([
+    original,
+    original.toLowerCase(),
+    sinAcentos,
+    sinAcentos.toLowerCase(),
+    slug,
+    titulo
+  ]);
+}
+
+function crearRutasImagenPrincipal(nombreProducto) {
+  const nombres = variantesNombreArchivo(nombreProducto);
+  const rutas = [];
+
+  nombres.forEach(function (nombre) {
+    rutas.push(imageFolder + nombre + ".png");
+    rutas.push(imageFolder + nombre + ".jpg");
+    rutas.push(imageFolder + nombre + ".jpeg");
+    rutas.push(imageFolder + nombre + ".webp");
+  });
+
+  return rutasUnicas(rutas);
 }
 
 function crearRutasImagenColor(nombreProducto, color) {
-  const base = slugProducto(nombreProducto);
-  const colorSlug = slugColor(color);
-  const colorOriginal = String(color || "").trim();
-  const colorTitulo = slugProducto(colorOriginal);
+  const nombres = variantesNombreArchivo(nombreProducto);
+  const colores = variantesColorArchivo(color);
+  const rutas = [];
 
-  return rutasUnicas([
-    imageFolder + base + "-" + colorSlug + ".png",
-    imageFolder + base + "-" + colorOriginal + ".png",
-    imageFolder + base + "-" + colorTitulo + ".png",
-    imageFolder + base + "-" + colorSlug + ".jpg",
-    imageFolder + base + "-" + colorOriginal + ".jpg",
-    imageFolder + base + "-" + colorTitulo + ".jpg"
-  ]);
+  nombres.forEach(function (nombre) {
+    colores.forEach(function (colorArchivo) {
+      rutas.push(imageFolder + nombre + "-" + colorArchivo + ".png");
+      rutas.push(imageFolder + nombre + "-" + colorArchivo + ".jpg");
+      rutas.push(imageFolder + nombre + "-" + colorArchivo + ".jpeg");
+      rutas.push(imageFolder + nombre + "-" + colorArchivo + ".webp");
+    });
+  });
+
+  return rutasUnicas(rutas);
 }
-
 function construirProductosDesdeExcel(filas) {
   const mapaProductos = new Map();
 
