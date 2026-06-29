@@ -857,11 +857,11 @@ main {
   margin-top: 40px;
 }
 
-/* Ocultar temporalmente el botón de WhatsApp */
+/* Ocultar temporalmente el botón de WhatsApp 
 #whatsappBtn {
   display: none !important;
 }
-
+*/
 /* =============================
    FALLBACK IMÁGENES
    ============================= */
