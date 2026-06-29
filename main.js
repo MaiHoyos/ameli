@@ -1,10 +1,10 @@
 // =============================
 // AMELÍ - CATÁLOGO DIGITAL
-// Edita aquí tus productos, imágenes, precios y número de WhatsApp.
-// Carpeta recomendada para imágenes: img/zapatos/
+// Archivo actualizado para carpeta:
+// Zapatos/
 // =============================
 
-const whatsappNumber = "573000000000"; // Cambia este número por el WhatsApp de Amelí.
+const whatsappNumber = "573000000000"; // Cambia este número por el WhatsApp real de Amelí.
 
 const tallasBase = ["35", "36", "37", "38", "39", "40"];
 
@@ -15,12 +15,12 @@ const productos = [
     tipo: "Sandalia de tacón",
     precio: "$000.000",
     descripcion: "Sandalia elegante de tiras delicadas, pensada para elevar looks femeninos con un toque cálido, sofisticado y versátil.",
-    imagenPrincipal: "img/zapatos/Gabriela.png",
+    imagenPrincipal: "Zapatos/Gabriela.png",
     tallas: tallasBase,
     colores: [
-      { nombre: "Beige", imagen: "img/zapatos/Gabriela-beige.png" },
-      { nombre: "Chocolate", imagen: "img/zapatos/Gabriela-chocolate.png" },
-      { nombre: "Miel", imagen: "img/zapatos/Gabriela-miel.png" }
+      { nombre: "Beige", imagen: "Zapatos/Gabriela-beige.png" },
+      { nombre: "Chocolate", imagen: "Zapatos/Gabriela-chocolate.png" },
+      { nombre: "Miel", imagen: "Zapatos/Gabriela-miel.png" }
     ]
   },
   {
@@ -29,28 +29,29 @@ const productos = [
     tipo: "Sandalia plana",
     precio: "$000.000",
     descripcion: "Sandalia plana de estilo atemporal, cómoda y delicada, ideal para acompañar días casuales con una estética pulida y femenina.",
-    imagenPrincipal: "img/zapatos/Heily.png",
+    imagenPrincipal: "Zapatos/Heily.png",
     tallas: tallasBase,
     colores: [
-      { nombre: "Miel", imagen: "img/zapatos/Heily-miel.png" },
-      { nombre: "Negro", imagen: "img/zapatos/Heily-negro.png" },
-      { nombre: "Vino", imagen: "img/zapatos/Heily-vino.png" }
+      { nombre: "Miel", imagen: "Zapatos/Heily-miel.png" },
+      { nombre: "Negro", imagen: "Zapatos/Heily-negro.png" },
+      { nombre: "Vino", imagen: "Zapatos/Heily-vino.png" }
     ]
   },
 
-  // Desde aquí quedan los espacios listos para que actualices las otras 16 referencias.
+  // Espacios editables para las demás referencias
+
   {
     id: 3,
     nombre: "Aida",
     tipo: "Sandalia",
     precio: "$000.000",
     descripcion: "Escribe aquí la descripción del producto.",
-    imagenPrincipal: "img/zapatos/Aida.png",
+    imagenPrincipal: "Zapatos/Aida.png",
     tallas: tallasBase,
     colores: [
-      { nombre: "Beige", imagen: "img/zapatos/Aida-beige.png" },
-      { nombre: "Negro", imagen: "img/zapatos/Aida-negro.png" },
-      { nombre: "Miel", imagen: "img/zapatos/Aida-miel.png" }
+      { nombre: "Beige", imagen: "Zapatos/Aida-beige.png" },
+      { nombre: "Negro", imagen: "Zapatos/Aida-negro.png" },
+      { nombre: "Miel", imagen: "Zapatos/Aida-miel.png" }
     ]
   },
   {
@@ -59,12 +60,12 @@ const productos = [
     tipo: "Sandalia",
     precio: "$000.000",
     descripcion: "Escribe aquí la descripción del producto.",
-    imagenPrincipal: "img/zapatos/Margarita.png",
+    imagenPrincipal: "Zapatos/Margarita.png",
     tallas: tallasBase,
     colores: [
-      { nombre: "Beige", imagen: "img/zapatos/Margarita-beige.png" },
-      { nombre: "Negro", imagen: "img/zapatos/Margarita-negro.png" },
-      { nombre: "Miel", imagen: "img/zapatos/Margarita-miel.png" }
+      { nombre: "Beige", imagen: "Zapatos/Margarita-beige.png" },
+      { nombre: "Negro", imagen: "Zapatos/Margarita-negro.png" },
+      { nombre: "Miel", imagen: "Zapatos/Margarita-miel.png" }
     ]
   },
   {
@@ -73,12 +74,12 @@ const productos = [
     tipo: "Sandalia",
     precio: "$000.000",
     descripcion: "Escribe aquí la descripción del producto.",
-    imagenPrincipal: "img/zapatos/Martina.png",
+    imagenPrincipal: "Zapatos/Martina.png",
     tallas: tallasBase,
     colores: [
-      { nombre: "Beige", imagen: "img/zapatos/Martina-beige.png" },
-      { nombre: "Negro", imagen: "img/zapatos/Martina-negro.png" },
-      { nombre: "Miel", imagen: "img/zapatos/Martina-miel.png" }
+      { nombre: "Beige", imagen: "Zapatos/Martina-beige.png" },
+      { nombre: "Negro", imagen: "Zapatos/Martina-negro.png" },
+      { nombre: "Miel", imagen: "Zapatos/Martina-miel.png" }
     ]
   },
   {
@@ -87,12 +88,12 @@ const productos = [
     tipo: "Sandalia",
     precio: "$000.000",
     descripcion: "Escribe aquí la descripción del producto.",
-    imagenPrincipal: "img/zapatos/Bonnie.png",
+    imagenPrincipal: "Zapatos/Bonnie.png",
     tallas: tallasBase,
     colores: [
-      { nombre: "Beige", imagen: "img/zapatos/Bonnie-beige.png" },
-      { nombre: "Negro", imagen: "img/zapatos/Bonnie-negro.png" },
-      { nombre: "Miel", imagen: "img/zapatos/Bonnie-miel.png" }
+      { nombre: "Beige", imagen: "Zapatos/Bonnie-beige.png" },
+      { nombre: "Negro", imagen: "Zapatos/Bonnie-negro.png" },
+      { nombre: "Miel", imagen: "Zapatos/Bonnie-miel.png" }
     ]
   },
   {
@@ -101,12 +102,12 @@ const productos = [
     tipo: "Sandalia",
     precio: "$000.000",
     descripcion: "Escribe aquí la descripción del producto.",
-    imagenPrincipal: "img/zapatos/Fiorella.png",
+    imagenPrincipal: "Zapatos/Fiorella.png",
     tallas: tallasBase,
     colores: [
-      { nombre: "Beige", imagen: "img/zapatos/Fiorella-beige.png" },
-      { nombre: "Negro", imagen: "img/zapatos/Fiorella-negro.png" },
-      { nombre: "Miel", imagen: "img/zapatos/Fiorella-miel.png" }
+      { nombre: "Beige", imagen: "Zapatos/Fiorella-beige.png" },
+      { nombre: "Negro", imagen: "Zapatos/Fiorella-negro.png" },
+      { nombre: "Miel", imagen: "Zapatos/Fiorella-miel.png" }
     ]
   },
   {
@@ -115,12 +116,12 @@ const productos = [
     tipo: "Sandalia",
     precio: "$000.000",
     descripcion: "Escribe aquí la descripción del producto.",
-    imagenPrincipal: "img/zapatos/Abbie.png",
+    imagenPrincipal: "Zapatos/Abbie.png",
     tallas: tallasBase,
     colores: [
-      { nombre: "Beige", imagen: "img/zapatos/Abbie-beige.png" },
-      { nombre: "Negro", imagen: "img/zapatos/Abbie-negro.png" },
-      { nombre: "Miel", imagen: "img/zapatos/Abbie-miel.png" }
+      { nombre: "Beige", imagen: "Zapatos/Abbie-beige.png" },
+      { nombre: "Negro", imagen: "Zapatos/Abbie-negro.png" },
+      { nombre: "Miel", imagen: "Zapatos/Abbie-miel.png" }
     ]
   },
   {
@@ -129,12 +130,12 @@ const productos = [
     tipo: "Sandalia",
     precio: "$000.000",
     descripcion: "Escribe aquí la descripción del producto.",
-    imagenPrincipal: "img/zapatos/Greta.png",
+    imagenPrincipal: "Zapatos/Greta.png",
     tallas: tallasBase,
     colores: [
-      { nombre: "Beige", imagen: "img/zapatos/Greta-beige.png" },
-      { nombre: "Negro", imagen: "img/zapatos/Greta-negro.png" },
-      { nombre: "Miel", imagen: "img/zapatos/Greta-miel.png" }
+      { nombre: "Beige", imagen: "Zapatos/Greta-beige.png" },
+      { nombre: "Negro", imagen: "Zapatos/Greta-negro.png" },
+      { nombre: "Miel", imagen: "Zapatos/Greta-miel.png" }
     ]
   },
   {
@@ -143,12 +144,12 @@ const productos = [
     tipo: "Sandalia",
     precio: "$000.000",
     descripcion: "Escribe aquí la descripción del producto.",
-    imagenPrincipal: "img/zapatos/Maria-Jose.png",
+    imagenPrincipal: "Zapatos/Maria-Jose.png",
     tallas: tallasBase,
     colores: [
-      { nombre: "Beige", imagen: "img/zapatos/Maria-Jose-beige.png" },
-      { nombre: "Negro", imagen: "img/zapatos/Maria-Jose-negro.png" },
-      { nombre: "Miel", imagen: "img/zapatos/Maria-Jose-miel.png" }
+      { nombre: "Beige", imagen: "Zapatos/Maria-Jose-beige.png" },
+      { nombre: "Negro", imagen: "Zapatos/Maria-Jose-negro.png" },
+      { nombre: "Miel", imagen: "Zapatos/Maria-Jose-miel.png" }
     ]
   },
   {
@@ -157,12 +158,12 @@ const productos = [
     tipo: "Sandalia",
     precio: "$000.000",
     descripcion: "Escribe aquí la descripción del producto.",
-    imagenPrincipal: "img/zapatos/Macarena.png",
+    imagenPrincipal: "Zapatos/Macarena.png",
     tallas: tallasBase,
     colores: [
-      { nombre: "Beige", imagen: "img/zapatos/Macarena-beige.png" },
-      { nombre: "Negro", imagen: "img/zapatos/Macarena-negro.png" },
-      { nombre: "Miel", imagen: "img/zapatos/Macarena-miel.png" }
+      { nombre: "Beige", imagen: "Zapatos/Macarena-beige.png" },
+      { nombre: "Negro", imagen: "Zapatos/Macarena-negro.png" },
+      { nombre: "Miel", imagen: "Zapatos/Macarena-miel.png" }
     ]
   },
   {
@@ -171,12 +172,12 @@ const productos = [
     tipo: "Sandalia",
     precio: "$000.000",
     descripcion: "Escribe aquí la descripción del producto.",
-    imagenPrincipal: "img/zapatos/Rita.png",
+    imagenPrincipal: "Zapatos/Rita.png",
     tallas: tallasBase,
     colores: [
-      { nombre: "Beige", imagen: "img/zapatos/Rita-beige.png" },
-      { nombre: "Negro", imagen: "img/zapatos/Rita-negro.png" },
-      { nombre: "Miel", imagen: "img/zapatos/Rita-miel.png" }
+      { nombre: "Beige", imagen: "Zapatos/Rita-beige.png" },
+      { nombre: "Negro", imagen: "Zapatos/Rita-negro.png" },
+      { nombre: "Miel", imagen: "Zapatos/Rita-miel.png" }
     ]
   },
   {
@@ -185,12 +186,12 @@ const productos = [
     tipo: "Sandalia",
     precio: "$000.000",
     descripcion: "Escribe aquí la descripción del producto.",
-    imagenPrincipal: "img/zapatos/Kiara.png",
+    imagenPrincipal: "Zapatos/Kiara.png",
     tallas: tallasBase,
     colores: [
-      { nombre: "Beige", imagen: "img/zapatos/Kiara-beige.png" },
-      { nombre: "Negro", imagen: "img/zapatos/Kiara-negro.png" },
-      { nombre: "Miel", imagen: "img/zapatos/Kiara-miel.png" }
+      { nombre: "Beige", imagen: "Zapatos/Kiara-beige.png" },
+      { nombre: "Negro", imagen: "Zapatos/Kiara-negro.png" },
+      { nombre: "Miel", imagen: "Zapatos/Kiara-miel.png" }
     ]
   },
   {
@@ -199,12 +200,12 @@ const productos = [
     tipo: "Sandalia",
     precio: "$000.000",
     descripcion: "Escribe aquí la descripción del producto.",
-    imagenPrincipal: "img/zapatos/Bruna.png",
+    imagenPrincipal: "Zapatos/Bruna.png",
     tallas: tallasBase,
     colores: [
-      { nombre: "Beige", imagen: "img/zapatos/Bruna-beige.png" },
-      { nombre: "Negro", imagen: "img/zapatos/Bruna-negro.png" },
-      { nombre: "Miel", imagen: "img/zapatos/Bruna-miel.png" }
+      { nombre: "Beige", imagen: "Zapatos/Bruna-beige.png" },
+      { nombre: "Negro", imagen: "Zapatos/Bruna-negro.png" },
+      { nombre: "Miel", imagen: "Zapatos/Bruna-miel.png" }
     ]
   },
   {
@@ -213,12 +214,12 @@ const productos = [
     tipo: "Sandalia",
     precio: "$000.000",
     descripcion: "Escribe aquí la descripción del producto.",
-    imagenPrincipal: "img/zapatos/Camila.png",
+    imagenPrincipal: "Zapatos/Camila.png",
     tallas: tallasBase,
     colores: [
-      { nombre: "Beige", imagen: "img/zapatos/Camila-beige.png" },
-      { nombre: "Negro", imagen: "img/zapatos/Camila-negro.png" },
-      { nombre: "Miel", imagen: "img/zapatos/Camila-miel.png" }
+      { nombre: "Beige", imagen: "Zapatos/Camila-beige.png" },
+      { nombre: "Negro", imagen: "Zapatos/Camila-negro.png" },
+      { nombre: "Miel", imagen: "Zapatos/Camila-miel.png" }
     ]
   },
   {
@@ -227,12 +228,12 @@ const productos = [
     tipo: "Sandalia",
     precio: "$000.000",
     descripcion: "Escribe aquí la descripción del producto.",
-    imagenPrincipal: "img/zapatos/Frida.png",
+    imagenPrincipal: "Zapatos/Frida.png",
     tallas: tallasBase,
     colores: [
-      { nombre: "Beige", imagen: "img/zapatos/Frida-beige.png" },
-      { nombre: "Negro", imagen: "img/zapatos/Frida-negro.png" },
-      { nombre: "Miel", imagen: "img/zapatos/Frida-miel.png" }
+      { nombre: "Beige", imagen: "Zapatos/Frida-beige.png" },
+      { nombre: "Negro", imagen: "Zapatos/Frida-negro.png" },
+      { nombre: "Miel", imagen: "Zapatos/Frida-miel.png" }
     ]
   },
   {
@@ -241,12 +242,12 @@ const productos = [
     tipo: "Sandalia",
     precio: "$000.000",
     descripcion: "Escribe aquí la descripción del producto.",
-    imagenPrincipal: "img/zapatos/Mila.png",
+    imagenPrincipal: "Zapatos/Mila.png",
     tallas: tallasBase,
     colores: [
-      { nombre: "Beige", imagen: "img/zapatos/Mila-beige.png" },
-      { nombre: "Negro", imagen: "img/zapatos/Mila-negro.png" },
-      { nombre: "Miel", imagen: "img/zapatos/Mila-miel.png" }
+      { nombre: "Beige", imagen: "Zapatos/Mila-beige.png" },
+      { nombre: "Negro", imagen: "Zapatos/Mila-negro.png" },
+      { nombre: "Miel", imagen: "Zapatos/Mila-miel.png" }
     ]
   },
   {
@@ -255,12 +256,12 @@ const productos = [
     tipo: "Sandalia",
     precio: "$000.000",
     descripcion: "Escribe aquí la descripción del producto.",
-    imagenPrincipal: "img/zapatos/Selene.png",
+    imagenPrincipal: "Zapatos/Selene.png",
     tallas: tallasBase,
     colores: [
-      { nombre: "Beige", imagen: "img/zapatos/Selene-beige.png" },
-      { nombre: "Negro", imagen: "img/zapatos/Selene-negro.png" },
-      { nombre: "Miel", imagen: "img/zapatos/Selene-miel.png" }
+      { nombre: "Beige", imagen: "Zapatos/Selene-beige.png" },
+      { nombre: "Negro", imagen: "Zapatos/Selene-negro.png" },
+      { nombre: "Miel", imagen: "Zapatos/Selene-miel.png" }
     ]
   }
 ];
@@ -291,6 +292,7 @@ function createFallbackElement(label) {
 function setImageWithFallback(img, src, alt, fallbackLabel) {
   img.src = src;
   img.alt = alt;
+
   img.onerror = () => {
     const fallback = createFallbackElement(fallbackLabel);
     img.replaceWith(fallback);
@@ -313,6 +315,7 @@ function createProductCard(product) {
 
   const info = document.createElement("div");
   info.className = "product-card-info";
+
   info.innerHTML = `
     <p>${product.tipo}</p>
     <h2>${product.nombre}</h2>
@@ -323,6 +326,7 @@ function createProductCard(product) {
   card.appendChild(info);
 
   card.addEventListener("click", () => openModal(product));
+
   card.addEventListener("keydown", (event) => {
     if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
@@ -334,13 +338,18 @@ function createProductCard(product) {
 }
 
 function renderProducts() {
+  if (!catalogGrid) return;
+
   catalogGrid.innerHTML = "";
+
   productos.forEach((product) => {
     catalogGrid.appendChild(createProductCard(product));
   });
 }
 
 function openModal(product) {
+  if (!productModal) return;
+
   activeProduct = product;
 
   const imagePanel = document.querySelector(".modal-image-panel");
@@ -350,7 +359,12 @@ function openModal(product) {
   refreshedMainImage.id = "modalMainImage";
   imagePanel.appendChild(refreshedMainImage);
 
-  setImageWithFallback(refreshedMainImage, product.imagenPrincipal, product.nombre, product.nombre);
+  setImageWithFallback(
+    refreshedMainImage,
+    product.imagenPrincipal,
+    product.nombre,
+    product.nombre
+  );
 
   modalProductName.textContent = product.nombre;
   modalPrice.textContent = product.precio;
@@ -366,14 +380,23 @@ function openModal(product) {
   });
 
   modalColors.innerHTML = "";
+
   product.colores.forEach((color, index) => {
     const button = document.createElement("button");
     button.className = `color-option${index === 0 ? " is-active" : ""}`;
     button.type = "button";
-    button.setAttribute("aria-label", `Ver color ${color.nombre} de ${product.nombre}`);
+    button.setAttribute(
+      "aria-label",
+      `Ver color ${color.nombre} de ${product.nombre}`
+    );
 
     const colorImg = document.createElement("img");
-    setImageWithFallback(colorImg, color.imagen, `${product.nombre} color ${color.nombre}`, color.nombre);
+    setImageWithFallback(
+      colorImg,
+      color.imagen,
+      `${product.nombre} color ${color.nombre}`,
+      color.nombre
+    );
 
     const label = document.createElement("span");
     label.textContent = color.nombre;
@@ -382,8 +405,16 @@ function openModal(product) {
     button.appendChild(label);
 
     button.addEventListener("click", () => {
-      updateMainImage(color.imagen, `${product.nombre} color ${color.nombre}`, product.nombre);
-      document.querySelectorAll(".color-option").forEach((item) => item.classList.remove("is-active"));
+      updateMainImage(
+        color.imagen,
+        `${product.nombre} color ${color.nombre}`,
+        product.nombre
+      );
+
+      document.querySelectorAll(".color-option").forEach((item) => {
+        item.classList.remove("is-active");
+      });
+
       button.classList.add("is-active");
     });
 
@@ -395,7 +426,10 @@ function openModal(product) {
   productModal.classList.add("is-open");
   productModal.setAttribute("aria-hidden", "false");
   document.body.classList.add("modal-open");
-  modalClose.focus();
+
+  if (modalClose) {
+    modalClose.focus();
+  }
 }
 
 function updateMainImage(src, alt, fallbackLabel) {
@@ -415,6 +449,8 @@ function updateWhatsappLink(product) {
 }
 
 function closeModal() {
+  if (!productModal) return;
+
   productModal.classList.remove("is-open");
   productModal.setAttribute("aria-hidden", "true");
   document.body.classList.remove("modal-open");
@@ -447,16 +483,24 @@ function handleHashChange() {
   showSection(sectionId);
 }
 
-productModal.addEventListener("click", (event) => {
-  if (event.target === productModal) {
-    closeModal();
-  }
-});
+if (productModal) {
+  productModal.addEventListener("click", (event) => {
+    if (event.target === productModal) {
+      closeModal();
+    }
+  });
+}
 
-modalClose.addEventListener("click", closeModal);
+if (modalClose) {
+  modalClose.addEventListener("click", closeModal);
+}
 
 window.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && productModal.classList.contains("is-open")) {
+  if (
+    event.key === "Escape" &&
+    productModal &&
+    productModal.classList.contains("is-open")
+  ) {
     closeModal();
   }
 });
@@ -477,6 +521,9 @@ if (menuToggle) {
   });
 }
 
-currentYear.textContent = new Date().getFullYear();
+if (currentYear) {
+  currentYear.textContent = new Date().getFullYear();
+}
+
 renderProducts();
 handleHashChange();
