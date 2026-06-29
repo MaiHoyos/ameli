@@ -976,3 +976,8 @@ main {
     height: 42px;
   }
 }
+
+/* Ocultar temporalmente el botón de WhatsApp */
+#whatsappBtn {
+  display: none !important;
+}
