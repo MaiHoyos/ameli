@@ -1154,3 +1154,146 @@ main {
     max-height: 360px;
   }
 }
+
+
+/* =============================
+   AJUSTE RESPONSIVE MODAL CELULAR
+   Para que se vean tallas y colores
+   ============================= */
+
+@media (max-width: 780px) {
+  .modal-overlay {
+    padding: 0;
+    align-items: flex-start;
+  }
+
+  .modal-dialog {
+    width: 100%;
+    height: 100dvh;
+    max-height: 100dvh;
+    border-radius: 0;
+    overflow-y: auto;
+    display: block;
+  }
+
+  .modal-image-panel {
+    width: 100%;
+    height: 44vh;
+    min-height: 260px;
+    max-height: 380px;
+    background: #ffffff;
+  }
+
+  .modal-image-panel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .modal-info-panel {
+    padding: 36px 28px 40px;
+    overflow: visible;
+  }
+
+  .modal-info-panel h2 {
+    font-size: 46px;
+    line-height: 0.95;
+  }
+
+  .modal-price {
+    font-size: 26px;
+  }
+
+  .modal-description {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .modal-block {
+    margin-top: 28px;
+  }
+
+  .size-list {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+
+  .size-pill {
+    min-width: 62px;
+    height: 46px;
+    flex: 0 0 auto;
+  }
+
+  .color-list {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 12px;
+  }
+
+  .color-option {
+    flex: 0 0 120px;
+    display: block;
+  }
+
+  .color-option img {
+    width: 100%;
+    height: 92px;
+    object-fit: cover;
+  }
+
+  .color-option span {
+    text-align: center;
+    padding: 8px 6px;
+    font-size: 10px;
+  }
+
+  .modal-close {
+    position: fixed;
+    top: 88px;
+    right: 20px;
+    z-index: 200;
+  }
+}
+
+@media (max-width: 520px) {
+  .modal-image-panel {
+    height: 40vh;
+    min-height: 230px;
+    max-height: 330px;
+  }
+
+  .modal-info-panel {
+    padding: 32px 22px 38px;
+  }
+
+  .modal-info-panel h2 {
+    font-size: 42px;
+  }
+
+  .modal-price {
+    font-size: 24px;
+  }
+
+  .modal-block h3 {
+    font-size: 11px;
+    letter-spacing: 0.36em;
+  }
+
+  .color-option {
+    flex: 0 0 112px;
+  }
+
+  .color-option img {
+    height: 84px;
+  }
+
+  .modal-close {
+    top: 82px;
+    right: 18px;
+  }
+}
