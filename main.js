@@ -1,223 +1,15 @@
 /* =============================
    AMELÍ - CATÁLOGO DIGITAL
-   main.js corregido
+   Lee la información desde inventario.xlsx
    Carpeta de imágenes: Zapatos/
    ============================= */
 
 const whatsappNumber = "573000000000"; // Cambia este número por el WhatsApp real de Amelí.
+const excelFile = "inventario.xlsx";
+const imageFolder = "Zapatos/";
 const tallasBase = ["35", "36", "37", "38", "39", "40"];
 
-function nombreColorBonito(colorArchivo) {
-  return colorArchivo
-    .replace(/-/g, " ")
-    .replace(/\b\w/g, function (letra) {
-      return letra.toUpperCase();
-    });
-}
-
-function crearColores(nombreArchivoBase, colores) {
-  return colores.map(function (color) {
-    return {
-      nombre: nombreColorBonito(color),
-      imagen: "Zapatos/" + nombreArchivoBase + "-" + color + ".png"
-    };
-  });
-}
-
-function crearProducto(id, nombreVisible, nombreArchivoBase, tipo, precio, descripcion, colores) {
-  return {
-    id: id,
-    nombre: nombreVisible,
-    tipo: tipo,
-    precio: precio,
-    descripcion: descripcion,
-    imagenPrincipal: "Zapatos/" + nombreArchivoBase + ".png",
-    tallas: tallasBase,
-    colores: crearColores(nombreArchivoBase, colores)
-  };
-}
-
-const productos = [
-  crearProducto(
-    1,
-    "Gabriela",
-    "Gabriela",
-    "Sandalia de tacón",
-    "$000.000",
-    "Sandalia elegante de tiras delicadas, pensada para elevar looks femeninos con un toque cálido, sofisticado y versátil.",
-    ["beige", "chocolate", "miel"]
-  ),
-
-  crearProducto(
-    2,
-    "Heily",
-    "Heily",
-    "Sandalia plana",
-    "$000.000",
-    "Sandalia plana de estilo atemporal, cómoda y delicada, ideal para acompañar días casuales con una estética pulida y femenina.",
-    ["miel", "negro", "vino"]
-  ),
-
-  crearProducto(
-    3,
-    "Roma",
-    "Roma",
-    "Sandalia",
-    "$000.000",
-    "Escribe aquí la descripción del producto.",
-    ["color1", "color2", "color3"]
-  ),
-
-  crearProducto(
-    4,
-    "Margarita",
-    "Margarita",
-    "Sandalia",
-    "$000.000",
-    "Escribe aquí la descripción del producto.",
-    ["color1", "color2", "color3"]
-  ),
-
-  crearProducto(
-    5,
-    "Martina",
-    "Martina",
-    "Sandalia",
-    "$000.000",
-    "Escribe aquí la descripción del producto.",
-    ["color1", "color2", "color3"]
-  ),
-
-  crearProducto(
-    6,
-    "Bonnie",
-    "Bonnie",
-    "Sandalia",
-    "$000.000",
-    "Escribe aquí la descripción del producto.",
-    ["color1", "color2", "color3"]
-  ),
-
-  crearProducto(
-    7,
-    "Fiorella",
-    "Fiorella",
-    "Sandalia",
-    "$000.000",
-    "Escribe aquí la descripción del producto.",
-    ["color1", "color2", "color3"]
-  ),
-
-  crearProducto(
-    8,
-    "Abbie",
-    "Abbie",
-    "Sandalia",
-    "$000.000",
-    "Escribe aquí la descripción del producto.",
-    ["color1", "color2", "color3"]
-  ),
-
-  crearProducto(
-    9,
-    "Greta",
-    "Greta",
-    "Sandalia",
-    "$000.000",
-    "Escribe aquí la descripción del producto.",
-    ["color1", "color2", "color3"]
-  ),
-
-  crearProducto(
-    10,
-    "María José",
-    "Maria-Jose",
-    "Sandalia",
-    "$000.000",
-    "Escribe aquí la descripción del producto.",
-    ["color1", "color2", "color3"]
-  ),
-
-  crearProducto(
-    11,
-    "Macarena",
-    "Macarena",
-    "Sandalia",
-    "$000.000",
-    "Escribe aquí la descripción del producto.",
-    ["color1", "color2", "color3"]
-  ),
-
-  crearProducto(
-    12,
-    "Cataleya",
-    "Cataleya",
-    "Sandalia",
-    "$000.000",
-    "Escribe aquí la descripción del producto.",
-    ["color1", "color2", "color3"]
-  ),
-
-  crearProducto(
-    13,
-    "Kiara",
-    "Kiara",
-    "Sandalia",
-    "$000.000",
-    "Escribe aquí la descripción del producto.",
-    ["color1", "color2", "color3"]
-  ),
-
-  crearProducto(
-    14,
-    "Bruna",
-    "Bruna",
-    "Sandalia",
-    "$000.000",
-    "Escribe aquí la descripción del producto.",
-    ["color1", "color2", "color3"]
-  ),
-
-  crearProducto(
-    15,
-    "Camila",
-    "Camila",
-    "Sandalia",
-    "$000.000",
-    "Escribe aquí la descripción del producto.",
-    ["color1", "color2", "color3"]
-  ),
-
-  crearProducto(
-    16,
-    "Maite",
-    "Maite",
-    "Sandalia",
-    "$000.000",
-    "Escribe aquí la descripción del producto.",
-    ["color1", "color2", "color3"]
-  ),
-
-  crearProducto(
-    17,
-    "Mila",
-    "Mila",
-    "Sandalia",
-    "$000.000",
-    "Escribe aquí la descripción del producto.",
-    ["color1", "color2", "color3"]
-  ),
-
-  crearProducto(
-    18,
-    "Selene",
-    "Selene",
-    "Sandalia",
-    "$000.000",
-    "Escribe aquí la descripción del producto.",
-    ["color1", "color2", "color3"]
-  )
-];
+let productos = [];
 
 const catalogGrid = document.getElementById("catalogGrid");
 const productModal = document.getElementById("productModal");
@@ -233,6 +25,229 @@ const currentYear = document.getElementById("currentYear");
 const menuToggle = document.getElementById("menuToggle");
 const mainNav = document.getElementById("mainNav");
 
+let colorSeleccionado = "";
+
+/* =============================
+   FUNCIONES PARA LEER EL EXCEL
+   ============================= */
+
+function normalizarTexto(texto) {
+  return String(texto || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim()
+    .toLowerCase();
+}
+
+function obtenerValorFila(fila, posiblesColumnas) {
+  const columnasFila = Object.keys(fila);
+
+  for (let i = 0; i < columnasFila.length; i++) {
+    const columnaReal = columnasFila[i];
+    const columnaNormalizada = normalizarTexto(columnaReal);
+
+    for (let j = 0; j < posiblesColumnas.length; j++) {
+      if (columnaNormalizada === normalizarTexto(posiblesColumnas[j])) {
+        return fila[columnaReal];
+      }
+    }
+  }
+
+  return "";
+}
+
+function formatoPrecio(valor) {
+  if (valor === null || valor === undefined || valor === "") {
+    return "$000.000";
+  }
+
+  const numero = Number(valor);
+
+  if (!isNaN(numero)) {
+    return "$" + numero.toLocaleString("es-CO");
+  }
+
+  return String(valor);
+}
+
+function slugProducto(nombre) {
+  return String(nombre || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-zA-Z0-9\s-]/g, "")
+    .trim()
+    .split(/\s+/)
+    .map(function (palabra) {
+      return palabra.charAt(0).toUpperCase() + palabra.slice(1).toLowerCase();
+    })
+    .join("-");
+}
+
+function slugColor(color) {
+  return String(color || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-zA-Z0-9\s-]/g, "")
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, "-");
+}
+
+function nombreColorBonito(color) {
+  return String(color || "")
+    .trim()
+    .toLowerCase()
+    .replace(/\b\w/g, function (letra) {
+      return letra.toUpperCase();
+    });
+}
+
+function rutasUnicas(rutas) {
+  return [...new Set(rutas.filter(Boolean))];
+}
+
+function crearRutasImagenPrincipal(nombreProducto) {
+  const base = slugProducto(nombreProducto);
+  const original = String(nombreProducto || "").trim();
+
+  return rutasUnicas([
+    imageFolder + base + ".png",
+    imageFolder + original + ".png",
+    imageFolder + base + ".jpg",
+    imageFolder + original + ".jpg"
+  ]);
+}
+
+function crearRutasImagenColor(nombreProducto, color) {
+  const base = slugProducto(nombreProducto);
+  const colorSlug = slugColor(color);
+  const colorOriginal = String(color || "").trim();
+  const colorTitulo = slugProducto(colorOriginal);
+
+  return rutasUnicas([
+    imageFolder + base + "-" + colorSlug + ".png",
+    imageFolder + base + "-" + colorOriginal + ".png",
+    imageFolder + base + "-" + colorTitulo + ".png",
+    imageFolder + base + "-" + colorSlug + ".jpg",
+    imageFolder + base + "-" + colorOriginal + ".jpg",
+    imageFolder + base + "-" + colorTitulo + ".jpg"
+  ]);
+}
+
+function construirProductosDesdeExcel(filas) {
+  const mapaProductos = new Map();
+
+  filas.forEach(function (fila) {
+    const referencia = String(
+      obtenerValorFila(fila, ["Referencia", "Nombre", "Producto"])
+    ).trim();
+
+    const categoria = String(
+      obtenerValorFila(fila, ["Categoría", "Categoria", "Tipo"])
+    ).trim();
+
+    const color = String(
+      obtenerValorFila(fila, ["Color", "Colores"])
+    ).trim();
+
+    const precio = obtenerValorFila(fila, ["Precio venta", "Precio", "Valor"]);
+
+    const descripcion = String(
+      obtenerValorFila(fila, ["Descripción", "Descripcion"])
+    ).trim();
+
+    if (!referencia) return;
+
+    if (!mapaProductos.has(referencia)) {
+      mapaProductos.set(referencia, {
+        id: mapaProductos.size + 1,
+        nombre: referencia,
+        tipo: categoria || "Calzado",
+        precio: formatoPrecio(precio),
+        descripcion: descripcion || "Descripción próximamente.",
+        imagenPrincipal: crearRutasImagenPrincipal(referencia),
+        tallas: tallasBase,
+        colores: []
+      });
+    }
+
+    const producto = mapaProductos.get(referencia);
+
+    if (!producto.tipo && categoria) {
+      producto.tipo = categoria;
+    }
+
+    if ((!producto.precio || producto.precio === "$000.000") && precio) {
+      producto.precio = formatoPrecio(precio);
+    }
+
+    if ((!producto.descripcion || producto.descripcion === "Descripción próximamente.") && descripcion) {
+      producto.descripcion = descripcion;
+    }
+
+    if (color) {
+      const colorKey = normalizarTexto(color);
+
+      const yaExiste = producto.colores.some(function (item) {
+        return normalizarTexto(item.nombre) === colorKey;
+      });
+
+      if (!yaExiste) {
+        producto.colores.push({
+          nombre: nombreColorBonito(color),
+          imagen: crearRutasImagenColor(referencia, color)
+        });
+      }
+    }
+  });
+
+  return Array.from(mapaProductos.values());
+}
+
+async function cargarInventario() {
+  if (!catalogGrid) return;
+
+  catalogGrid.innerHTML = "<p>Cargando catálogo Amelí...</p>";
+
+  try {
+    if (typeof XLSX === "undefined") {
+      throw new Error("No se cargó la librería XLSX. Revisa el script de SheetJS en el HTML.");
+    }
+
+    const respuesta = await fetch(excelFile);
+
+    if (!respuesta.ok) {
+      throw new Error("No se pudo encontrar el archivo inventario.xlsx en la carpeta raíz.");
+    }
+
+    const data = await respuesta.arrayBuffer();
+    const workbook = XLSX.read(data, { type: "array" });
+    const primeraHoja = workbook.SheetNames[0];
+    const hoja = workbook.Sheets[primeraHoja];
+
+    const filas = XLSX.utils.sheet_to_json(hoja, {
+      defval: ""
+    });
+
+    productos = construirProductosDesdeExcel(filas);
+
+    mostrarProductos();
+    manejarHash();
+
+  } catch (error) {
+    console.error(error);
+
+    catalogGrid.innerHTML =
+      "<div class='image-fallback'>" +
+      "No se pudo cargar el inventario. Revisa que el archivo inventario.xlsx esté en la carpeta raíz y que el nombre esté escrito exactamente igual." +
+      "</div>";
+  }
+}
+
+/* =============================
+   IMÁGENES
+   ============================= */
+
 function crearFallback(texto) {
   const fallback = document.createElement("div");
   fallback.className = "image-fallback";
@@ -240,15 +255,28 @@ function crearFallback(texto) {
   return fallback;
 }
 
-function colocarImagen(img, ruta, alt, fallbackTexto) {
-  img.src = ruta;
+function colocarImagen(img, rutas, alt, fallbackTexto) {
+  const listaRutas = Array.isArray(rutas) ? rutas : [rutas];
+  let indice = 0;
+
   img.alt = alt;
+  img.src = listaRutas[indice];
 
   img.onerror = function () {
-    const fallback = crearFallback(fallbackTexto);
-    img.replaceWith(fallback);
+    indice++;
+
+    if (indice < listaRutas.length) {
+      img.src = listaRutas[indice];
+    } else {
+      const fallback = crearFallback(fallbackTexto);
+      img.replaceWith(fallback);
+    }
   };
 }
+
+/* =============================
+   PRODUCTOS Y MODAL
+   ============================= */
 
 function crearTarjetaProducto(producto) {
   const card = document.createElement("article");
@@ -295,6 +323,11 @@ function mostrarProductos() {
 
   catalogGrid.innerHTML = "";
 
+  if (!productos.length) {
+    catalogGrid.innerHTML = "<p>No hay productos cargados en el inventario.</p>";
+    return;
+  }
+
   productos.forEach(function (producto) {
     const card = crearTarjetaProducto(producto);
     catalogGrid.appendChild(card);
@@ -303,6 +336,8 @@ function mostrarProductos() {
 
 function abrirModal(producto) {
   if (!productModal) return;
+
+  colorSeleccionado = producto.colores.length ? producto.colores[0].nombre : "";
 
   const imagePanel = document.querySelector(".modal-image-panel");
 
@@ -356,6 +391,8 @@ function abrirModal(producto) {
       button.appendChild(label);
 
       button.addEventListener("click", function () {
+        colorSeleccionado = color.nombre;
+
         actualizarImagenPrincipal(
           color.imagen,
           producto.nombre + " color " + color.nombre,
@@ -369,6 +406,7 @@ function abrirModal(producto) {
         });
 
         button.classList.add("is-active");
+        actualizarWhatsapp(producto);
       });
 
       modalColors.appendChild(button);
@@ -386,7 +424,7 @@ function abrirModal(producto) {
   }
 }
 
-function actualizarImagenPrincipal(ruta, alt, fallbackTexto) {
+function actualizarImagenPrincipal(rutas, alt, fallbackTexto) {
   const imagePanel = document.querySelector(".modal-image-panel");
 
   if (!imagePanel) return;
@@ -396,14 +434,19 @@ function actualizarImagenPrincipal(ruta, alt, fallbackTexto) {
   const nuevaImagen = document.createElement("img");
   nuevaImagen.id = "modalMainImage";
 
-  colocarImagen(nuevaImagen, ruta, alt, fallbackTexto);
+  colocarImagen(nuevaImagen, rutas, alt, fallbackTexto);
   imagePanel.appendChild(nuevaImagen);
 }
 
 function actualizarWhatsapp(producto) {
   if (!whatsappBtn) return;
 
-  const mensaje = "Hola, quiero consultar la disponibilidad del producto " + producto.nombre + " en Amelí.";
+  let mensaje = "Hola, quiero consultar la disponibilidad del producto " + producto.nombre + " en Amelí.";
+
+  if (colorSeleccionado) {
+    mensaje = "Hola, quiero consultar la disponibilidad del producto " + producto.nombre + " en color " + colorSeleccionado + " en Amelí.";
+  }
+
   const url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(mensaje);
 
   whatsappBtn.href = url;
@@ -416,6 +459,10 @@ function cerrarModal() {
   productModal.setAttribute("aria-hidden", "true");
   document.body.classList.remove("modal-open");
 }
+
+/* =============================
+   NAVEGACIÓN
+   ============================= */
 
 function mostrarSeccion(sectionId) {
   const seccionesValidas = ["inicio", "calzado", "bolsos", "accesorios"];
@@ -454,6 +501,10 @@ function manejarHash() {
   const sectionId = window.location.hash.replace("#", "") || "inicio";
   mostrarSeccion(sectionId);
 }
+
+/* =============================
+   EVENTOS
+   ============================= */
 
 if (productModal) {
   productModal.addEventListener("click", function (event) {
@@ -495,5 +546,8 @@ if (currentYear) {
   currentYear.textContent = new Date().getFullYear();
 }
 
-mostrarProductos();
-manejarHash();
+/* =============================
+   INICIAR
+   ============================= */
+
+cargarInventario();
