@@ -1297,3 +1297,163 @@ main {
     right: 18px;
   }
 }
+
+/* =============================
+   MODAL MÓVIL AJUSTADO
+   Imagen principal más visible + texto compacto
+   ============================= */
+
+@media (max-width: 780px) {
+  .modal-overlay {
+    padding: 0;
+    align-items: flex-start;
+  }
+
+  .modal-dialog {
+    width: 100%;
+    height: 100dvh;
+    max-height: 100dvh;
+    border-radius: 0;
+    overflow-y: auto;
+    display: block;
+  }
+
+  .modal-image-panel {
+    width: 100%;
+    height: 56vh;
+    min-height: 390px;
+    max-height: 560px;
+    background: #ffffff;
+  }
+
+  .modal-image-panel img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #ffffff;
+  }
+
+  .modal-info-panel {
+    padding: 22px 24px 34px;
+    overflow: visible;
+  }
+
+  .modal-brand {
+    font-size: 10px;
+    letter-spacing: 0.32em;
+  }
+
+  .modal-info-panel h2 {
+    margin-top: 10px;
+    font-size: 36px;
+    line-height: 0.95;
+  }
+
+  .modal-price {
+    margin-top: 8px;
+    font-size: 22px;
+  }
+
+  .modal-type {
+    margin-top: 14px;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+  }
+
+  .modal-description {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .modal-block {
+    margin-top: 22px;
+  }
+
+  .modal-block h3 {
+    margin-bottom: 10px;
+    font-size: 10px;
+    letter-spacing: 0.32em;
+  }
+
+  .size-list {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+  }
+
+  .size-pill {
+    min-width: 52px;
+    height: 38px;
+    flex: 0 0 auto;
+    font-size: 14px;
+  }
+
+  .color-list {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+
+  .color-option {
+    flex: 0 0 104px;
+    display: block;
+  }
+
+  .color-option img {
+    width: 100%;
+    height: 78px;
+    object-fit: cover;
+  }
+
+  .color-option span {
+    padding: 7px 5px;
+    font-size: 9px;
+    text-align: center;
+  }
+
+  .modal-close {
+    position: fixed;
+    top: 14px;
+    right: 14px;
+    width: 42px;
+    height: 42px;
+    z-index: 200;
+  }
+}
+
+@media (max-width: 520px) {
+  .modal-image-panel {
+    height: 54vh;
+    min-height: 360px;
+    max-height: 500px;
+  }
+
+  .modal-info-panel {
+    padding: 20px 20px 32px;
+  }
+
+  .modal-info-panel h2 {
+    font-size: 34px;
+  }
+
+  .modal-price {
+    font-size: 21px;
+  }
+
+  .modal-description {
+    font-size: 13.5px;
+  }
+
+  .color-option {
+    flex: 0 0 100px;
+  }
+
+  .color-option img {
+    height: 74px;
+  }
+}
