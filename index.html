@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amelí | Catálogo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a href="#inicio" class="brand" data-section-link="inicio" aria-label="Ir al inicio">
+      <span class="brand-mark">A</span>
+      <span class="brand-name">Amelí</span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+      <a href="#inicio" data-section-link="inicio">Inicio</a>
+      <a href="#calzado" data-section-link="calzado">Calzado</a>
+      <a href="#bolsos" data-section-link="bolsos">Bolsos</a>
+      <a href="#accesorios" data-section-link="accesorios">Accesorios</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-section home-section is-active" id="inicio" aria-labelledby="inicio-title">
+      <div class="hero-bg-shape hero-shape-one"></div>
+      <div class="hero-bg-shape hero-shape-two"></div>
+
+      <div class="hero-content">
+        <p class="eyebrow">Nueva colección</p>
+        <h1 id="inicio-title">Amelí</h1>
+        <p class="hero-phrase">Elegancia que acompaña cada paso.</p>
+        <p class="hero-text">
+          Una selección femenina, cálida y atemporal de piezas pensadas para acompañar la vida cotidiana con delicadeza, versatilidad y estilo.
+        </p>
+        <div class="hero-actions">
+          <a href="#calzado" class="btn btn-primary" data-section-link="calzado">Ver calzado</a>
+          <a href="#bolsos" class="btn btn-secondary" data-section-link="bolsos">Bolsos próximamente</a>
+        </div>
+      </div>
+
+      <div class="category-preview" aria-label="Categorías principales">
+        <a href="#calzado" class="category-card" data-section-link="calzado">
+          <span>01</span>
+          <h2>Calzado</h2>
+          <p>Diseños delicados para todos tus momentos.</p>
+        </a>
+        <a href="#bolsos" class="category-card muted" data-section-link="bolsos">
+          <span>02</span>
+          <h2>Bolsos</h2>
+          <p>Próximamente</p>
+        </a>
+        <a href="#accesorios" class="category-card muted" data-section-link="accesorios">
+          <span>03</span>
+          <h2>Accesorios</h2>
+          <p>Próximamente</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="page-section catalog-section" id="calzado" aria-labelledby="calzado-title">
+      <div class="section-heading">
+        <p class="eyebrow">Catálogo Amelí</p>
+        <h1 id="calzado-title">Calzado</h1>
+        <p>
+          Explora nuestras referencias disponibles. Haz clic en cada diseño para ver tallas, colores y consultar disponibilidad.
+        </p>
+      </div>
+
+      <div class="catalog-grid" id="catalogGrid" aria-live="polite"></div>
+    </section>
+
+    <section class="page-section coming-section" id="bolsos" aria-labelledby="bolsos-title">
+      <div class="coming-card">
+        <p class="eyebrow">Amelí</p>
+        <h1 id="bolsos-title">Bolsos</h1>
+        <p class="coming-label">Próximamente</p>
+        <p>Estamos preparando una selección especial para ti.</p>
+        <a href="#calzado" class="btn btn-primary" data-section-link="calzado">Ver calzado</a>
+      </div>
+    </section>
+
+    <section class="page-section coming-section" id="accesorios" aria-labelledby="accesorios-title">
+      <div class="coming-card">
+        <p class="eyebrow">Amelí</p>
+        <h1 id="accesorios-title">Accesorios</h1>
+        <p class="coming-label">Próximamente</p>
+        <p>Detalles delicados para completar tu estilo.</p>
+        <a href="#calzado" class="btn btn-primary" data-section-link="calzado">Ver calzado</a>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal-overlay" id="productModal" aria-hidden="true">
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalProductName">
+      <button class="modal-close" id="modalClose" type="button" aria-label="Cerrar detalle del producto">×</button>
+
+      <div class="modal-image-panel">
+        <img id="modalMainImage" src="" alt="" />
+      </div>
+
+      <div class="modal-info-panel">
+        <p class="modal-brand">AMELÍ</p>
+        <h2 id="modalProductName"></h2>
+        <p class="modal-price" id="modalPrice"></p>
+        <p class="modal-type" id="modalType"></p>
+        <p class="modal-description" id="modalDescription"></p>
+
+        <div class="modal-block">
+          <h3>Tallas disponibles</h3>
+          <div class="size-list" id="modalSizes"></div>
+        </div>
+
+        <div class="modal-block">
+          <h3>Colores disponibles</h3>
+          <div class="color-list" id="modalColors"></div>
+        </div>
+
+        <a href="#" class="btn btn-primary whatsapp-btn" id="whatsappBtn" target="_blank" rel="noopener">
+          Consultar disponibilidad
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>© <span id="currentYear"></span> Amelí. Catálogo digital.</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
