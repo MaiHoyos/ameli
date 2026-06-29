@@ -24,6 +24,9 @@ const whatsappBtn = document.getElementById("whatsappBtn");
 const currentYear = document.getElementById("currentYear");
 const menuToggle = document.getElementById("menuToggle");
 const mainNav = document.getElementById("mainNav");
+const sizeGuideBtn = document.getElementById("sizeGuideBtn");
+const sizeGuideModal = document.getElementById("sizeGuideModal");
+const sizeGuideClose = document.getElementById("sizeGuideClose");
 
 let colorSeleccionado = "";
 
@@ -514,6 +517,25 @@ function abrirModal(producto) {
   }
 }
 
+if (sizeGuideBtn) {
+  sizeGuideBtn.addEventListener("click", function (event) {
+    event.stopPropagation();
+    abrirGuiaTallas();
+  });
+}
+
+if (sizeGuideClose) {
+  sizeGuideClose.addEventListener("click", cerrarGuiaTallas);
+}
+
+if (sizeGuideModal) {
+  sizeGuideModal.addEventListener("click", function (event) {
+    if (event.target === sizeGuideModal) {
+      cerrarGuiaTallas();
+    }
+  });
+}
+
 function actualizarImagenPrincipal(rutas, alt, fallbackTexto) {
   const imagePanel = document.querySelector(".modal-image-panel");
 
@@ -548,6 +570,24 @@ function cerrarModal() {
   productModal.classList.remove("is-open");
   productModal.setAttribute("aria-hidden", "true");
   document.body.classList.remove("modal-open");
+}
+
+function abrirGuiaTallas() {
+  if (!sizeGuideModal) return;
+
+  sizeGuideModal.classList.add("is-open");
+  sizeGuideModal.setAttribute("aria-hidden", "false");
+
+  if (sizeGuideClose) {
+    sizeGuideClose.focus();
+  }
+}
+
+function cerrarGuiaTallas() {
+  if (!sizeGuideModal) return;
+
+  sizeGuideModal.classList.remove("is-open");
+  sizeGuideModal.setAttribute("aria-hidden", "true");
 }
 
 /* =============================
@@ -610,6 +650,19 @@ if (modalClose) {
 
 window.addEventListener("keydown", function (event) {
   if (event.key === "Escape" && productModal && productModal.classList.contains("is-open")) {
+    cerrarModal();
+  }
+});
+
+window.addEventListener("keydown", function (event) {
+  if (event.key !== "Escape") return;
+
+  if (sizeGuideModal && sizeGuideModal.classList.contains("is-open")) {
+    cerrarGuiaTallas();
+    return;
+  }
+
+  if (productModal && productModal.classList.contains("is-open")) {
     cerrarModal();
   }
 });
