@@ -161,9 +161,16 @@
         <p class="modal-description" id="modalDescription"></p>
 
         <div class="modal-block">
-          <h3>Tallas disponibles</h3>
-          <div class="size-list" id="modalSizes"></div>
-        </div>
+  <div class="modal-block-title">
+    <h3>Tallas disponibles</h3>
+
+    <button class="size-guide-btn" id="sizeGuideBtn" type="button">
+      Guía de tallas
+    </button>
+  </div>
+
+  <div class="size-list" id="modalSizes"></div>
+</div>
 
         <div class="modal-block">
           <h3>Colores disponibles</h3>
@@ -178,6 +185,59 @@
     </div>
   </div>
 
+<!-- MODAL GUÍA DE TALLAS -->
+<div class="size-guide-overlay" id="sizeGuideModal" aria-hidden="true">
+  <div class="size-guide-dialog" role="dialog" aria-modal="true" aria-labelledby="sizeGuideTitle">
+
+    <button class="size-guide-close" id="sizeGuideClose" type="button" aria-label="Cerrar guía de tallas">
+      ×
+    </button>
+
+    <h2 id="sizeGuideTitle">Guía de tallas</h2>
+
+    <p>
+      Nuestras tallas son estándar. Puedes elegir la talla que compras normalmente,
+      pero si tienes alguna duda, mide tu pie y comprueba tu talla.
+    </p>
+
+    <table class="size-guide-table">
+      <thead>
+        <tr>
+          <th>Talla</th>
+          <th>CMS</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>35</td>
+          <td>22.5</td>
+        </tr>
+        <tr>
+          <td>36</td>
+          <td>23.5</td>
+        </tr>
+        <tr>
+          <td>37</td>
+          <td>24</td>
+        </tr>
+        <tr>
+          <td>38</td>
+          <td>24.5</td>
+        </tr>
+        <tr>
+          <td>39</td>
+          <td>25.5</td>
+        </tr>
+        <tr>
+          <td>40</td>
+          <td>26</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
   <!-- FOOTER -->
   <footer class="site-footer">
     <p class="footer-mark">Amelí</p>
