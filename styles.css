@@ -1131,12 +1131,6 @@ main {
     font-size: 34px;
   }
 
-   .hero-image-card img {
-    /* En móvil difumina hacia ARRIBA (hacia el texto) en vez de a la izquierda */
-    -webkit-mask-image: linear-gradient(to top, #000 60%, transparent 100%);
-    mask-image: linear-gradient(to top, #000 60%, transparent 100%);
-    -webkit-mask-composite: source-over;
-    mask-composite: add;
-  }
+   
    
 }
