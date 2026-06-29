@@ -4,7 +4,7 @@
    Carpeta de imágenes: Zapatos/
    ============================= */
 
-const whatsappNumber = "573000000000"; // Cambia este número por el WhatsApp real de Amelí.
+const whatsappNumber = "573104807864"; // Cambia este número por el WhatsApp real de Amelí.
 const excelFile = "inventario.xlsx";
 const imageFolder = "Zapatos/";
 const tallasBase = ["35", "36", "37", "38", "39", "40"];
