@@ -981,3 +981,99 @@ main {
 #whatsappBtn {
   display: none !important;
 }
+/* =============================
+   AJUSTES LOGO AMELÍ Y LANZAMIENTO
+   ============================= */
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  display: block;
+}
+
+.brand-wordmark {
+  height: 34px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Oculta los estilos anteriores del logo textual, por si quedaron */
+.brand-mark,
+.brand-name {
+  display: none;
+}
+
+/* Nueva imagen de lanzamiento en el inicio */
+.hero-image-card {
+  position: relative;
+  min-height: 500px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--beige);
+  box-shadow: var(--shadow);
+}
+
+.hero-image-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Ajuste responsive de la imagen de lanzamiento */
+@media (max-width: 1050px) {
+  .hero-image-card {
+    min-height: 420px;
+  }
+
+  .hero-image-card img {
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 780px) {
+  .brand-logo {
+    width: 38px;
+    height: 38px;
+  }
+
+  .brand-wordmark {
+    height: 29px;
+  }
+
+  .hero-image-card {
+    min-height: 360px;
+  }
+
+  .hero-image-card img {
+    min-height: 360px;
+  }
+}
+
+@media (max-width: 520px) {
+  .brand-logo {
+    width: 34px;
+    height: 34px;
+  }
+
+  .brand-wordmark {
+    height: 25px;
+  }
+
+  .hero-image-card {
+    min-height: 310px;
+  }
+
+  .hero-image-card img {
+    min-height: 310px;
+  }
+}
