@@ -231,8 +231,9 @@ async function cargarInventario() {
 
     productos = construirProductosDesdeExcel(filas);
 
-    mostrarProductos();
-    manejarHash();
+mostrarProductos();
+crearCollageHero();
+manejarHash();
 
   } catch (error) {
     console.error(error);
@@ -331,6 +332,37 @@ function mostrarProductos() {
   productos.forEach(function (producto) {
     const card = crearTarjetaProducto(producto);
     catalogGrid.appendChild(card);
+  });
+}
+
+function crearCollageHero() {
+  const collage = document.getElementById("heroMobileCollage");
+
+  if (!collage || !productos.length) return;
+
+  collage.innerHTML = "";
+
+  const productosCollage = productos.slice(0, 6);
+
+  productosCollage.forEach(function (producto) {
+    const item = document.createElement("div");
+    item.className = "hero-collage-item";
+    item.setAttribute("aria-hidden", "true");
+
+    const img = document.createElement("img");
+
+    colocarImagen(
+      img,
+      producto.imagenPrincipal,
+      "",
+      producto.nombre
+    );
+
+    img.alt = "";
+    img.setAttribute("draggable", "false");
+
+    item.appendChild(img);
+    collage.appendChild(item);
   });
 }
 
