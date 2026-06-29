@@ -982,98 +982,175 @@ main {
   display: none !important;
 }
 /* =============================
-   AJUSTES LOGO AMELÍ Y LANZAMIENTO
+   AJUSTES CORREGIDOS LOGO AMELÍ Y LANZAMIENTO
    ============================= */
 
+/* Header más controlado */
+.site-header {
+  height: 76px;
+  min-height: 76px;
+  overflow: visible;
+}
+
+.header-inner {
+  height: 76px;
+  min-height: 76px;
+}
+
+/* Marca en encabezado */
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  height: 54px;
+  max-height: 54px;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
-.brand-logo {
+/* Círculo pequeño del isotipo */
+.brand-logo-circle {
   width: 42px;
   height: 42px;
-  object-fit: contain;
+  min-width: 42px;
+  min-height: 42px;
+  max-width: 42px;
+  max-height: 42px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cream-soft);
+}
+
+/* Logo recortado dentro del círculo */
+.brand-logo-circle .brand-logo {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
   display: block;
 }
 
-.brand-wordmark {
-  height: 34px;
+/* Contenedor del nombre */
+.brand-name-image {
+  height: 30px;
+  max-height: 30px;
+  display: inline-flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Nombre Amelí pequeño */
+.brand-name-image .brand-wordmark {
+  height: 30px;
   width: auto;
+  max-width: 130px;
   object-fit: contain;
   display: block;
 }
 
-/* Oculta los estilos anteriores del logo textual, por si quedaron */
+/* Ocultar estilos antiguos del logo textual */
 .brand-mark,
 .brand-name {
-  display: none;
+  display: none !important;
 }
 
-/* Nueva imagen de lanzamiento en el inicio */
+/* Imagen de lanzamiento en inicio */
 .hero-image-card {
   position: relative;
-  min-height: 500px;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  max-height: 560px;
   border-radius: var(--radius-lg);
   overflow: hidden;
   background: var(--beige);
   box-shadow: var(--shadow);
 }
 
+/* La foto queda contenida, no desbordada */
 .hero-image-card img {
   width: 100%;
   height: 100%;
-  min-height: 500px;
+  max-width: 100%;
   object-fit: cover;
   display: block;
 }
 
-/* Ajuste responsive de la imagen de lanzamiento */
+/* Ocultar temporalmente el botón de WhatsApp */
+#whatsappBtn {
+  display: none !important;
+}
+
+/* Responsive */
 @media (max-width: 1050px) {
   .hero-image-card {
-    min-height: 420px;
-  }
-
-  .hero-image-card img {
-    min-height: 420px;
+    max-height: 520px;
   }
 }
 
 @media (max-width: 780px) {
-  .brand-logo {
-    width: 38px;
-    height: 38px;
+  .site-header {
+    height: 68px;
+    min-height: 68px;
   }
 
-  .brand-wordmark {
-    height: 29px;
+  .header-inner {
+    height: 68px;
+    min-height: 68px;
+  }
+
+  .brand {
+    height: 48px;
+    max-height: 48px;
+  }
+
+  .brand-logo-circle {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    min-height: 38px;
+    max-width: 38px;
+    max-height: 38px;
+  }
+
+  .brand-name-image {
+    height: 26px;
+    max-height: 26px;
+  }
+
+  .brand-name-image .brand-wordmark {
+    height: 26px;
+    max-width: 110px;
   }
 
   .hero-image-card {
-    min-height: 360px;
-  }
-
-  .hero-image-card img {
-    min-height: 360px;
+    max-height: 440px;
   }
 }
 
 @media (max-width: 520px) {
-  .brand-logo {
+  .brand-logo-circle {
     width: 34px;
     height: 34px;
+    min-width: 34px;
+    min-height: 34px;
+    max-width: 34px;
+    max-height: 34px;
   }
 
-  .brand-wordmark {
-    height: 25px;
+  .brand-name-image {
+    height: 24px;
+    max-height: 24px;
+  }
+
+  .brand-name-image .brand-wordmark {
+    height: 24px;
+    max-width: 96px;
   }
 
   .hero-image-card {
-    min-height: 310px;
-  }
-
-  .hero-image-card img {
-    min-height: 310px;
+    max-height: 360px;
   }
 }
