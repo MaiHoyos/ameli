@@ -308,6 +308,19 @@ manejarHash();
 }
 
 /* =============================
+     Analíticas
+   ============================= */
+function enviarEventoAmeli(nombreEvento, datos = {}) {
+  window.dataLayer = window.dataLayer || [];
+
+  window.dataLayer.push({
+    event: nombreEvento,
+    ...datos
+  });
+}
+
+
+/* =============================
    IMÁGENES
    ============================= */
 
@@ -516,6 +529,12 @@ function abrirModal(producto) {
   if (modalClose) {
     modalClose.focus();
   }
+
+   enviarEventoAmeli("ameli_ver_producto", {
+  producto_nombre: producto.nombre || producto.referencia || "Producto",
+  producto_tipo: producto.tipo || producto.categoria || "Calzado",
+  producto_precio: producto.precio || ""
+});
 }
 
 if (sizeGuideBtn) {
@@ -693,6 +712,12 @@ if (currentYear) {
 if (floatingWhatsappBtn) {
   const mensajeWhatsappGeneral = "Hola, quiero recibir información sobre Amelí.";
   floatingWhatsappBtn.href = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(mensajeWhatsappGeneral);
+
+  floatingWhatsappBtn.addEventListener("click", function () {
+    enviarEventoAmeli("ameli_click_whatsapp", {
+      origen: "boton_flotante"
+    });
+  });
 }
 /* =============================
    INICIAR
